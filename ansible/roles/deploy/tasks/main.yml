@@ -1,0 +1,46 @@
+---
+- name: Create application directory
+  file:
+    path: /opt/cloud1
+    state: directory
+    mode: '0755'
+    owner: ubuntu
+    group: ubuntu
+
+- name: Create directories for persistent data
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: '0755'
+    owner: ubuntu
+    group: ubuntu
+  loop:
+    - /opt/cloud1/conf.d
+    - /opt/cloud1/certbot_data
+    - /opt/cloud1/certbot_www
+
+- name: Copy docker-compose file
+  template:
+    src: docker-compose.yml.j2
+    dest: /opt/cloud1/docker-compose.yml
+    mode: '0644'
+    owner: ubuntu
+    group: ubuntu
+
+- name: Copy environment file
+  template:
+    src: .env.j2
+    dest: /opt/cloud1/.env
+    mode: '0600'
+    owner: ubuntu
+    group: ubuntu
+
+- name: Stop existing containers (if any)
+  community.docker.docker_compose_v2:
+    project_src: /opt/cloud1
+    state: absent
+  ignore_errors: yes
+
+- name: Wait for containers to stop
+  pause:
+    seconds: 10
