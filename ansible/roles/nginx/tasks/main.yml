@@ -1,0 +1,24 @@
+---
+- name: Create nginx configuration directory
+  file:
+    path: /opt/cloud1/conf.d
+    state: directory
+    mode: '0755'
+    owner: ubuntu
+    group: ubuntu
+
+- name: Copy main nginx configuration
+  template:
+    src: nginx.conf.j2
+    dest: /opt/cloud1/nginx.conf
+    mode: '0644'
+    owner: ubuntu
+    group: ubuntu
+
+- name: Copy temporary site configuration (HTTP only for certbot)
+  template:
+    src: default.conf.j2
+    dest: /opt/cloud1/conf.d/default.conf
+    mode: '0644'
+    owner: ubuntu
+    group: ubuntu
