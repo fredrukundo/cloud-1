@@ -109,49 +109,49 @@ A fully automated, production-ready WordPress deployment system using Ansible, D
 ---
 
 ## 📁 Project Structure
-
+```bash
 cloud-1/
-├── README.md # This file
-├── .gitignore # Git exclusions
+├── README.md # This file  
+├── .gitignore # Git exclusions  
 │
-├── ansible/ # Ansible automation code
-│ ├── ansible.cfg # Ansible configuration
-│ ├── inventory.ini # Server inventory (single server)
-│ ├── inventory.multi.example # Example multi-server inventory
-│ ├── server_key # SSH private key (DO NOT COMMIT) => (cp downloaded ec2 key)
-│ ├── playbook.yml # Main playbook - orchestrates all roles
+├── ansible/ # Ansible automation code  
+│ ├── ansible.cfg # Ansible configuration  
+│ ├── inventory.ini # Server inventory (single server)  
+│ ├── inventory.multi.example # Example multi-server inventory  
+│ ├── server_key # SSH private key (DO NOT COMMIT) => (cp downloaded ec2 key)  
+│ ├── playbook.yml # Main playbook - orchestrates all roles  
 │ │
-│ └── roles/ # Modular Ansible roles
+│ └── roles/ # Modular Ansible roles  
 │ │
-│ ├── ufw/ # Firewall configuration
-│ │ └── tasks/
-│ │ └── main.yml # UFW installation and rules
+│ ├── ufw/ # Firewall configuration  
+│ │ └── tasks/  
+│ │ └── main.yml # UFW installation and rules  
 │ │
-│ ├── docker/ # Docker installation
-│ │ ├── tasks/
-│ │ │ └── main.yml # Install Docker, Docker Compose, Python libs
-│ │ └── handlers/
-│ │ └── main.yml # Docker service handlers (optional)
+│ ├── docker/ # Docker installation  
+│ │ ├── tasks/  
+│ │ │ └── main.yml # Install Docker, Docker Compose, Python libs  
+│ │ └── handlers/  
+│ │ └── main.yml # Docker service handlers (optional)  
 │ │
-│ ├── deploy/ # Application deployment
-│ │ ├── tasks/
+│ ├── deploy/ # Application deployment  
+│ │ ├── tasks/  
 │ │ │ └── main.yml # Create directories, copy configs, start containers
-│ │ └── templates/
-│ │ ├── docker-compose.yml.j2 # Docker Compose template (Jinja2)
-│ │ └── .env.j2 # Environment variables template
+│ │ └── templates/  
+│ │ ├── docker-compose.yml.j2 # Docker Compose template (Jinja2)  
+│ │ └── .env.j2 # Environment variables template  
 │ │
-│ ├── nginx/ # Web server configuration
-│ │ ├── tasks/
-│ │ │ └── main.yml # Copy Nginx configs
-│ │ └── templates/
-│ │ ├── nginx.conf.j2 # Main Nginx config
-│ │ └── default.conf.j2 # Site-specific config (WordPress + phpMyAdmin)
+│ ├── nginx/ # Web server configuration  
+│ │ ├── tasks/  
+│ │ │ └── main.yml # Copy Nginx configs  
+│ │ └── templates/  
+│ │ ├── nginx.conf.j2 # Main Nginx config  
+│ │ └── default.conf.j2 # Site-specific config (WordPress + phpMyAdmin)  
 │ │
-│ └── tls/ # SSL/TLS certificate management
-│ └── tasks/
-│ └── main.yml # Let's Encrypt certificate acquisition
-└── server_key
-
+│ └── tls/ # SSL/TLS certificate management  
+│ └── tasks/  
+│ └── main.yml # Let's Encrypt certificate acquisition  
+└── server_key  
+```
 ### Key Files
 
 - **`playbook.yml`**: Orchestrates all deployment roles
