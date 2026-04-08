@@ -7,8 +7,11 @@
 
 A fully automated, production-ready WordPress deployment system using Ansible, Docker, and modern DevOps practices.
 
-**Live Demo**: https://cloud1.dev | **phpMyAdmin**: https://cloud1.dev/phpmyadmin
+**Live Demo**: https://cloud1.dev | **phpMyAdmin**: https://cloud1.dev/phpmyadmin  
+---
+## 📸 Preview
 
+![App Screenshot](assets/images/pic2_cloud1.png)
 ---
 
 ## 📋 Table of Contents
@@ -378,3 +381,7 @@ docker-compose restart nginx
 
 # Restart all
 docker-compose restart
+```
+---  
+## 📸 Preview
+![ App Screenshoot ]( assets/images/pic1_cloud1.png)
