@@ -7,7 +7,7 @@
 
 A fully automated, production-ready WordPress deployment system using Ansible, Docker, and modern DevOps practices.
 
-**Live Demo**: https://camagru.dev | **phpMyAdmin**: https://camagru.dev/phpmyadmin
+**Live Demo**: https://cloud1.dev | **phpMyAdmin**: https://cloud1.dev/phpmyadmin
 
 ---
 
