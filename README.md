@@ -49,7 +49,7 @@ A fully automated, production-ready WordPress deployment system using Ansible, D
 ## 🏗️ Architecture
 
 ### System Overview
-                     Internet
+                     Internet                                                                                                       
                         │
                         │ HTTPS (443) / HTTP (80)
                         │
@@ -76,6 +76,7 @@ A fully automated, production-ready WordPress deployment system using Ansible, D
     │  │         Port 3306               │ │
     │  └─────────────────────────────────┘ │
     └────────────────────────────────────────┘
+
 
 
 ### Container Stack
